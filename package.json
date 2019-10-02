@@ -1,0 +1,72 @@
+{
+  "name": "my-app",
+  "private": true,
+  "version": "1.0.0",
+  "description": "My App",
+  "repository": "",
+  "license": "UNLICENSED",
+  "framework7": {
+    "cwd": "E:\\fw7\\myapp",
+    "type": [
+      "cordova",
+      "web"
+    ],
+    "name": "My App",
+    "framework": "core",
+    "template": "tabs",
+    "bundler": false,
+    "cssPreProcessor": false,
+    "theming": {
+      "customColor": false,
+      "color": "#007aff",
+      "darkTheme": false,
+      "iconFonts": true,
+      "fillBars": false
+    },
+    "customBuild": false,
+    "pkg": "io.framework7.myapp",
+    "cordova": {
+      "folder": "cordova",
+      "platforms": [
+        "android",
+        "ios"
+      ],
+      "plugins": [
+        "cordova-plugin-statusbar",
+        "cordova-plugin-keyboard",
+        "cordova-plugin-splashscreen",
+        "cordova-plugin-wkwebview-engine"
+      ]
+    }
+  },
+  "scripts": {
+    "serve": "http-server ./www/ -o -c 1 -a localhost -p 5000",
+    "start": "npm run serve",
+    "debug" : "npm run start",
+    "build-cordova": "node ./build/build.js && cd cordova && cordova build",
+    "build-cordova-ios": "node ./build/build.js && cd cordova && cordova build ios",
+    "build-cordova-android": "node ./build/build.js && cd cordova && cordova build android",
+    "postinstall": "cpy './node_modules/framework7-icons/fonts/*.*' './www/fonts/'"
+  },
+  "browserslist": [
+    "Android >= 5",
+    "IOS >= 9.3",
+    "Edge >= 15",
+    "Safari >= 9.1",
+    "Chrome >= 49",
+    "Firefox >= 31",
+    "Samsung >= 5"
+  ],
+  "dependencies": {
+    "dom7": "^2.1.3",
+    "framework7": "^4.5.1",
+    "framework7-icons": "^2.3.1",
+    "template7": "^1.4.2"
+  },
+  "devDependencies": {
+    "cpy": "^7.3.0",
+    "cpy-cli": "^2.0.0",
+    "http-server": "^0.11.1",
+    "rimraf": "^3.0.0"
+  }
+}
