@@ -5,6 +5,10 @@ var routes = [
     url: './pages/login.html',
   },
   {
+    path: '/register',
+    url: './pages/register.html',
+  },
+  {
     path: '/about/',
     url: './pages/about.html',
   },
@@ -90,5 +94,5 @@ var routes = [
   {
     path: '(.*)',
     url: './pages/404.html',
-  },
+  }
 ];
